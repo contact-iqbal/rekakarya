@@ -230,62 +230,41 @@ export default function Home() {
               delay: 0.8 
             }}
           >
-            <Tilt
-              options={{
-                max: 8,
-                scale: 1.02,
-                speed: 800,
-                glare: true,
-                'max-glare': 0.1,
-                gyroscope: true,
-                reset: false
-              }}
-              style={{ 
-                transformStyle: 'preserve-3d',
-                animation: 'continuousTilt 8s ease-in-out infinite'
-              }}
-            >
-              <div className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-2xl p-6 w-80 border-4 border-black dark:border-white shadow-2xl"
-                style={{ transform: 'translateZ(50px)' }}
+            {/* Simplified Search Bar */}
+            <div className="relative w-80">
+              <input
+                type="text"
+                placeholder="Enter domain name..."
+                className="w-full px-6 py-5 pr-20 bg-white dark:bg-neutral-700 border-4 border-black dark:border-white rounded-3xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200 font-medium text-lg shadow-xl"
+               onClick={() => {
+                 const domainInput = document.querySelector('input[placeholder="Enter domain name..."]') as HTMLInputElement;
+                 const domainValue = domainInput?.value?.trim();
+                 if (domainValue) {
+                   // Store the domain search term and redirect to order page
+                   sessionStorage.setItem('domainSearchTerm', domainValue);
+                   window.location.href = '/order/choose-domain';
+                 } else {
+                   // If no domain entered, just go to order page
+                   window.location.href = '/order/choose-domain';
+                 }
+               }}
+              />
+              <button 
+                onClick={() => {
+                  const domainInput = document.querySelector('input[placeholder="Enter domain name..."]') as HTMLInputElement;
+                  const domainValue = domainInput?.value?.trim();
+                  if (domainValue) {
+                    sessionStorage.setItem('domainSearchTerm', domainValue);
+                    window.location.href = '/order/choose-domain';
+                  } else {
+                    window.location.href = '/order/choose-domain';
+                  }
+                }}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-2xl flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors shadow-lg"
               >
-                {/* Simple Search Input */}
-                <div 
-                  className="relative mb-6"
-                  style={{ transform: 'translateZ(30px)' }}
-                >
-                  <input
-                    type="text"
-                    placeholder="Enter domain name..."
-                    className="w-full px-4 py-4 bg-white dark:bg-neutral-700 border-3 border-black dark:border-white rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200 text-center font-medium"
-                   onClick={() => {
-                     const domainInput = document.querySelector('input[placeholder="Enter domain name..."]') as HTMLInputElement;
-                     const domainValue = domainInput?.value?.trim();
-                     if (domainValue) {
-                       // Store the domain search term and redirect to order page
-                       sessionStorage.setItem('domainSearchTerm', domainValue);
-                       window.location.href = '/order/choose-domain';
-                     } else {
-                       // If no domain entered, just go to order page
-                       window.location.href = '/order/choose-domain';
-                     }
-                   }}
-                  />
-                  <button className="absolute right-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
-                    <ArrowUpRight size={14} />
-                  </button>
-                </div>
-
-                {/* Simple Search Button */}
-                <button
-                  onClick={() => window.location.href = '/order/choose-domain'}
-                  className="w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold py-4 rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
-                  style={{ transform: 'translateZ(40px)' }}
-                >
-                  <span>Find Domain</span>
-                  <ArrowUpRight size={16} />
-                </button>
-              </div>
-            </Tilt>
+                <ArrowUpRight size={16} />
+              </button>
+            </div>
           </motion.div>
         </div>
         
