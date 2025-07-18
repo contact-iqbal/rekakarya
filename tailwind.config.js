@@ -31,6 +31,11 @@ module.exports = {
         'scale-up': 'scaleUp 0.4s ease-out',
         'float': 'float 6s ease-in-out infinite',
       },
+      borderWidth: {
+        '3': '3px',
+        '5': '5px',
+        '6': '6px',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },

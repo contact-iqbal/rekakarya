@@ -198,7 +198,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                onClick={() => window.location.href = '/order/choose-domain'}
               >
-                <span className="text-lg md:text-xl font-medium border-b border-neutral-400 dark:border-neutral-500 group-hover:border-neutral-600 dark:group-hover:border-neutral-400 transition-colors pb-1">
+                <span className="text-lg md:text-xl font-medium border-b-4 border-black dark:border-white group-hover:border-neutral-600 dark:group-hover:border-neutral-400 transition-colors pb-1">
                   Start Your Project
                 </span>
                 <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -211,7 +211,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                onClick={() => window.location.href = '/services'}
               >
-                <span className="text-lg md:text-xl font-medium border-b border-neutral-400 dark:border-neutral-500 group-hover:border-neutral-600 dark:group-hover:border-neutral-400 transition-colors pb-1">
+                <span className="text-lg md:text-xl font-medium border-b-4 border-black dark:border-white group-hover:border-neutral-600 dark:group-hover:border-neutral-400 transition-colors pb-1">
                   Our services
                 </span>
                 <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -246,7 +246,7 @@ export default function Home() {
               }}
             >
               <div 
-                className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-2xl p-6 w-80 border border-neutral-200 dark:border-neutral-700 shadow-2xl"
+                className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-2xl p-6 w-80 border-4 border-black dark:border-white shadow-2xl"
                 style={{ transform: 'translateZ(50px)' }}
               >
                 {/* Domain Search Header */}
@@ -270,7 +270,7 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Enter domain name..."
-                    className="w-full px-4 py-3 bg-white dark:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 bg-white dark:bg-neutral-700 border-3 border-black dark:border-white rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200"
                    onClick={() => {
                      const domainInput = document.querySelector('input[placeholder="Enter domain name..."]') as HTMLInputElement;
                      const domainValue = domainInput?.value?.trim();
@@ -306,7 +306,7 @@ export default function Home() {
 
                 {/* Search Button */}
                 <button 
-                  className="w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium py-3 rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium py-3 rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
                   style={{ transform: 'translateZ(40px)' }}
                 >
                   <span>Search Domain</span>
@@ -321,7 +321,7 @@ export default function Home() {
         <div className="px-8 md:px-16 lg:px-24 pb-16 pt-8">
           <motion.div 
             ref={statsRef}
-            className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-neutral-200 dark:border-neutral-700"
+            className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border-4 border-black dark:border-white"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               {/* Stat 1 */}
@@ -414,7 +414,7 @@ export default function Home() {
               </div>
 
               {/* Founder Quote Card */}
-              <div className="bg-neutral-50 dark:bg-neutral-800/50 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700">
+              <div className="bg-neutral-50 dark:bg-neutral-800/50 rounded-2xl p-8 border-4 border-black dark:border-white">
                 {/* Founder Info */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-neutral-400 to-neutral-600 dark:from-neutral-500 dark:to-neutral-700 rounded-full flex items-center justify-center">
@@ -496,10 +496,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-all duration-300"
+              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 border-4 border-black dark:border-white hover:shadow-lg transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-16 h-16 border-2 border-neutral-900 dark:border-white rounded-full flex items-center justify-center mb-8">
+              <div className="w-16 h-16 border-4 border-black dark:border-white rounded-full flex items-center justify-center mb-8">
                 <svg className="w-8 h-8 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -520,10 +520,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-all duration-300"
+              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 border-4 border-black dark:border-white hover:shadow-lg transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-16 h-16 border-2 border-neutral-900 dark:border-white rounded-full flex items-center justify-center mb-8">
+              <div className="w-16 h-16 border-4 border-black dark:border-white rounded-full flex items-center justify-center mb-8">
                 <svg className="w-8 h-8 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -544,10 +544,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 row-span-2"
+              className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-3xl p-8 border-4 border-black dark:border-white hover:shadow-2xl transition-all duration-300 row-span-2"
             >
               {/* Icon */}
-              <div className="w-16 h-16 border-2 border-white dark:border-neutral-900 rounded-full flex items-center justify-center mb-8">
+              <div className="w-16 h-16 border-4 border-white dark:border-black rounded-full flex items-center justify-center mb-8">
                 <svg className="w-8 h-8 text-white dark:text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -570,7 +570,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/order/choose-domain'}
-                className="group relative overflow-hidden bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
+                className="group relative overflow-hidden bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl border-4 border-white dark:border-black transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
               >
                 <span>Build Website</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -593,10 +593,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-2"
+              className="bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-8 border-4 border-black dark:border-white hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-2"
             >
               {/* Icon */}
-              <div className="w-16 h-16 border-2 border-neutral-900 dark:border-white rounded-full flex items-center justify-center mb-8">
+              <div className="w-16 h-16 border-4 border-black dark:border-white rounded-full flex items-center justify-center mb-8">
                 <svg className="w-8 h-8 text-neutral-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
@@ -618,7 +618,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-neutral-900 dark:bg-white rounded-3xl p-8 md:p-12 mb-16 md:mb-20"
+            className="bg-neutral-900 dark:bg-white rounded-3xl p-8 md:p-12 mb-16 md:mb-20 border-4 border-black dark:border-white"
           >
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               {[

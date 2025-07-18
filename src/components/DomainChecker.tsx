@@ -125,7 +125,7 @@ const DomainChecker: React.FC = () => {
                     value={domain}
                     onChange={(e) => setDomain(e.target.value)}
                     placeholder="Enter domain name..."
-                    className="w-full pl-16 pr-6 py-6 text-lg font-medium bg-white dark:bg-neutral-800 border-2 border-neutral-200 dark:border-neutral-700 rounded-2xl focus:border-neutral-400 dark:focus:border-neutral-500 focus:outline-none transition-all duration-300 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 shadow-sm hover:shadow-md focus:shadow-lg relative z-10"
+                    className="w-full pl-16 pr-6 py-6 text-lg font-medium bg-white dark:bg-neutral-800 border-4 border-black dark:border-white rounded-2xl focus:border-neutral-400 dark:focus:border-neutral-500 focus:outline-none transition-all duration-300 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 shadow-sm hover:shadow-md focus:shadow-lg relative z-10"
                     disabled={isChecking}
                   />
                 </div>
@@ -137,7 +137,7 @@ const DomainChecker: React.FC = () => {
                 disabled={isChecking || !domain.trim()}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative w-full overflow-hidden bg-gradient-to-r from-neutral-900 to-neutral-800 dark:from-neutral-100 dark:to-neutral-200 text-white dark:text-neutral-900 py-6 rounded-2xl font-bold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl disabled:hover:scale-100 disabled:hover:y-0"
+                className="group relative w-full overflow-hidden bg-gradient-to-r from-neutral-900 to-neutral-800 dark:from-neutral-100 dark:to-neutral-200 text-white dark:text-neutral-900 py-6 rounded-2xl border-4 border-black dark:border-white font-bold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl disabled:hover:scale-100 disabled:hover:y-0"
               >
                 {/* Button Background Animation */}
                 <div className="absolute inset-0 bg-gradient-to-r from-neutral-800 to-neutral-700 dark:from-neutral-200 dark:to-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -205,7 +205,7 @@ const DomainChecker: React.FC = () => {
             </div>
 
             {/* Results Container */}
-            <div className="min-h-[400px] bg-white dark:bg-neutral-800 rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 p-6 shadow-sm">
+            <div className="min-h-[400px] bg-white dark:bg-neutral-800 rounded-2xl border-4 border-black dark:border-white p-6 shadow-sm">
               <AnimatePresence mode="wait">
                 {!hasSearched ? (
                   <motion.div
@@ -226,7 +226,7 @@ const DomainChecker: React.FC = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => window.location.href = '/order/choose-domain'}
-                      className="mt-6 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center gap-2 mx-auto"
+                      className="mt-6 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center gap-2 mx-auto"
                     >
                       <span>Start Domain Search</span>
                       <ArrowUpRight className="w-5 h-5" />
@@ -262,8 +262,8 @@ const DomainChecker: React.FC = () => {
                         custom={index}
                         className={`p-4 rounded-xl border transition-all duration-300 ${
                           result.available
-                            ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 hover:border-green-300 dark:hover:border-green-700'
-                            : 'bg-neutral-50 dark:bg-neutral-700/50 border-neutral-200 dark:border-neutral-600'
+                            ? 'bg-green-50 dark:bg-green-900/20 border-4 border-green-600 dark:border-green-400 hover:border-green-700 dark:hover:border-green-300'
+                            : 'bg-neutral-50 dark:bg-neutral-700/50 border-4 border-neutral-400 dark:border-neutral-500'
                         }`}
                       >
                         <div className="flex items-center justify-between">
@@ -297,7 +297,7 @@ const DomainChecker: React.FC = () => {
                                sessionStorage.setItem('domainSearchTerm', `${result.domain}${result.extension}`);
                                window.location.href = '/order/choose-domain';
                              }}
-                              className="px-4 py-2 bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white text-sm font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2 flex-shrink-0"
+                              className="px-4 py-2 bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white text-sm font-semibold rounded-lg border-3 border-black dark:border-white transition-colors duration-200 flex items-center gap-2 flex-shrink-0"
                             >
                               <span>Register</span>
                               <ExternalLink className="w-4 h-4" />

@@ -179,7 +179,7 @@ const Navigation: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-12 left-4 right-4 z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl border border-neutral-200/50 dark:border-neutral-700/50 rounded-2xl shadow-lg transition-all duration-500 ease-in-out"
+            className="fixed top-12 left-4 right-4 z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl border-4 border-black dark:border-white rounded-2xl shadow-lg transition-all duration-500 ease-in-out"
           >
             <div className="max-w-7xl mx-auto px-6 md:px-8">
               <div className="flex items-center justify-between h-16 md:h-20">
@@ -198,7 +198,7 @@ const Navigation: React.FC = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="relative p-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl shadow-lg hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-300"
+                    className="relative p-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl border-3 border-black dark:border-white shadow-lg hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-300"
                     aria-label="Toggle menu"
                   >
                     <Menu size={20} />
@@ -261,9 +261,9 @@ const Navigation: React.FC = () => {
                         <Link
                           href={item.path}
                           onClick={() => setIsOpen(false)}
-                          className={`group flex items-center justify-between py-4 px-6 rounded-2xl transition-all duration-300 ${
+                          className={`group flex items-center justify-between py-4 px-6 rounded-2xl border-3 border-transparent hover:border-white/30 transition-all duration-300 ${
                             pathname === item.path || (pathname.startsWith(item.path) && item.path !== '/')
-                              ? 'bg-white text-neutral-900'
+                              ? 'bg-white text-neutral-900 border-black'
                               : 'text-white hover:bg-white/10'
                           }`}
                         >
@@ -435,9 +435,9 @@ const Navigation: React.FC = () => {
                         <Link
                           href={item.path}
                           onClick={() => setIsOpen(false)}
-                          className={`group flex items-center justify-between py-3 px-4 rounded-xl transition-all duration-300 ${
+                          className={`group flex items-center justify-between py-3 px-4 rounded-xl border-3 border-transparent hover:border-white/30 transition-all duration-300 ${
                             pathname === item.path || (pathname.startsWith(item.path) && item.path !== '/')
-                              ? 'bg-white text-neutral-900'
+                              ? 'bg-white text-neutral-900 border-black'
                               : 'text-white hover:bg-white/10'
                           }`}
                         >

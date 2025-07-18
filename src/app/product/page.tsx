@@ -384,7 +384,7 @@ const ProductCard: React.FC<{ product: any; onClick: () => void; showOverlay?: b
       className="group bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer relative shadow-lg shadow-white/50 dark:shadow-black/50 hover:shadow-xl hover:shadow-white/60 dark:hover:shadow-black/60"
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+      <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 dark:bg-neutral-800 border-4 border-black dark:border-white rounded-t-lg">
         {isLoaded ? (
           <img
             src={product.image}
@@ -412,11 +412,11 @@ const ProductCard: React.FC<{ product: any; onClick: () => void; showOverlay?: b
       </div>
       
       {/* Bottom Section */}
-      <div className="p-4">
+      <div className="p-4 border-4 border-t-0 border-black dark:border-white rounded-b-lg">
         <div className="flex items-center justify-between">
           {/* Author Info */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-neutral-800 dark:bg-neutral-200 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-neutral-800 dark:bg-neutral-200 rounded-full border-2 border-black dark:border-white flex items-center justify-center">
               <span className="text-white font-bold text-xs">
                 {product.author.charAt(0)}
               </span>
@@ -930,7 +930,7 @@ export default function ProductPage() {
                 disabled={isLoading}
                 whileHover={{ scale: isLoading ? 1 : 1.05 }}
                 whileTap={{ scale: isLoading ? 1 : 0.95 }}
-                className={`group relative overflow-hidden px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-white/50 dark:shadow-black/50 hover:shadow-xl hover:shadow-white/60 dark:hover:shadow-black/60 flex items-center gap-3 ${
+                className={`group relative overflow-hidden px-8 py-4 rounded-2xl border-4 border-black dark:border-white font-semibold text-lg transition-all duration-300 shadow-lg shadow-white/50 dark:shadow-black/50 hover:shadow-xl hover:shadow-white/60 dark:hover:shadow-black/60 flex items-center gap-3 ${
                   isLoading 
                     ? 'bg-neutral-400 text-white cursor-not-allowed' 
                     : 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-100'
@@ -967,7 +967,7 @@ export default function ProductPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mx-auto mt-12 px-8 py-4 bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-sm text-neutral-600 dark:text-neutral-400 rounded-2xl font-medium cursor-default shadow-md shadow-white/40 dark:shadow-black/40"
+              className="mx-auto mt-12 px-8 py-4 bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-sm text-neutral-600 dark:text-neutral-400 rounded-2xl border-4 border-black dark:border-white font-medium cursor-default shadow-md shadow-white/40 dark:shadow-black/40"
             >
               All products loaded
             </motion.button>

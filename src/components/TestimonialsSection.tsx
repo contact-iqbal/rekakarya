@@ -131,7 +131,7 @@ const TestimonialsSection: React.FC = () => {
 
   const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => (
     <div
-      className="flex-shrink-0 w-80 md:w-96 bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-lg border border-neutral-300 dark:border-neutral-700 mr-8"
+      className="flex-shrink-0 w-80 md:w-96 bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-lg border-4 border-black dark:border-white mr-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

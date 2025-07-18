@@ -198,7 +198,7 @@ export default function ChooseTemplatePage() {
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-300">
       
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-40 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+      <div className="fixed top-12 left-0 right-0 z-40 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-8">
