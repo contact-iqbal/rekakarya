@@ -245,32 +245,18 @@ export default function Home() {
                 animation: 'continuousTilt 8s ease-in-out infinite'
               }}
             >
-              <div 
-                className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-2xl p-6 w-80 border-4 border-black dark:border-white shadow-2xl"
+              <div className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-2xl p-6 w-80 border-4 border-black dark:border-white shadow-2xl"
                 style={{ transform: 'translateZ(50px)' }}
               >
-                {/* Domain Search Header */}
+                {/* Simple Search Input */}
                 <div 
-                  className="mb-6"
-                  style={{ transform: 'translateZ(40px)' }}
-                >
-                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
-                    Find Your Domain
-                  </h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    Search for the perfect domain name
-                  </p>
-                </div>
-
-                {/* Search Input */}
-                <div 
-                  className="relative mb-4"
+                  className="relative mb-6"
                   style={{ transform: 'translateZ(30px)' }}
                 >
                   <input
                     type="text"
                     placeholder="Enter domain name..."
-                    className="w-full px-4 py-3 bg-white dark:bg-neutral-700 border-3 border-black dark:border-white rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white dark:bg-neutral-700 border-3 border-black dark:border-white rounded-xl text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:focus:ring-neutral-400 focus:border-transparent transition-all duration-200 text-center font-medium"
                    onClick={() => {
                      const domainInput = document.querySelector('input[placeholder="Enter domain name..."]') as HTMLInputElement;
                      const domainValue = domainInput?.value?.trim();
@@ -284,32 +270,18 @@ export default function Home() {
                      }
                    }}
                   />
-                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
+                  <button className="absolute right-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors">
                     <ArrowUpRight size={14} />
                   </button>
                 </div>
 
-                {/* Domain Extensions */}
-                <div 
-                  className="flex flex-wrap gap-2 mb-4"
-                  style={{ transform: 'translateZ(35px)' }}
-                >
-                  {['.com', '.net', '.org', '.io'].map((ext) => (
-                    <button
-                      key={ext}
-                      className="px-3 py-1.5 text-xs font-medium bg-neutral-200/50 dark:bg-neutral-600/50 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300/50 dark:hover:bg-neutral-500/50 transition-colors border border-neutral-300/50 dark:border-neutral-500/50"
-                    >
-                      {ext}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Search Button */}
-                <button 
-                  className="w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium py-3 rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
+                {/* Simple Search Button */}
+                <button
+                  onClick={() => window.location.href = '/order/choose-domain'}
+                  className="w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold py-4 rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
                   style={{ transform: 'translateZ(40px)' }}
                 >
-                  <span>Search Domain</span>
+                  <span>Find Domain</span>
                   <ArrowUpRight size={16} />
                 </button>
               </div>

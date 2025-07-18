@@ -19,7 +19,7 @@ const projects: Project[] = [
     id: 1,
     title: "E-Commerce Platform",
     description: "Modern shopping experience with seamless checkout flow and advanced product filtering",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400&h=300",
     category: "Web Development",
     tags: ["React", "Node.js", "Stripe"],
     year: "2023"
@@ -28,7 +28,7 @@ const projects: Project[] = [
     id: 2,
     title: "Mobile Banking App",
     description: "Secure and intuitive financial management with biometric authentication",
-    image: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=400&h=300",
     category: "Mobile App",
     tags: ["React Native", "Firebase", "Plaid"],
     year: "2023"
@@ -37,7 +37,7 @@ const projects: Project[] = [
     id: 3,
     title: "SaaS Dashboard",
     description: "Analytics platform with real-time insights and customizable widgets",
-    image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400&h=300",
     category: "UI/UX Design",
     tags: ["Figma", "D3.js", "TypeScript"],
     year: "2023"
@@ -46,7 +46,7 @@ const projects: Project[] = [
     id: 4,
     title: "Food Delivery App",
     description: "Connecting restaurants with hungry customers through smart logistics",
-    image: "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=400&h=300",
     category: "Mobile App",
     tags: ["Flutter", "Google Maps", "Socket.io"],
     year: "2023"
@@ -55,23 +55,77 @@ const projects: Project[] = [
     id: 5,
     title: "Portfolio Website",
     description: "Creative showcase for digital artists with interactive galleries",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400&h=300",
     category: "Web Development",
     tags: ["Next.js", "Three.js", "Framer Motion"],
     year: "2023"
   }
 ]
 
+// Lazy loading hook with intersection observer
+const useLazyImage = (src: string) => {
+  const [imageSrc, setImageSrc] = useState<string>('')
+  const [imageRef, setImageRef] = useState<HTMLImageElement | null>(null)
+
+  useEffect(() => {
+    let observer: IntersectionObserver
+    
+    if (imageRef && imageSrc !== src) {
+      observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setImageSrc(src)
+              observer.unobserve(imageRef)
+            }
+          })
+        },
+        { threshold: 0.1, rootMargin: '50px' }
+      )
+      observer.observe(imageRef)
+    }
+
+    return () => {
+      if (observer && imageRef) {
+        observer.unobserve(imageRef)
+      }
+    }
+  }, [imageRef, src, imageSrc])
+
+  return [imageSrc, setImageRef] as const
+}
 const ProjectCards: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isSticky, setIsSticky] = useState(false)
+  const [imagesLoaded, setImagesLoaded] = useState<Set<number>>(new Set())
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
 
+  // Preload images only when section is in view
+  const isInView = useInView(sectionRef, { once: true, margin: "200px" })
+
+  useEffect(() => {
+    if (!isInView) return
+
+    // Preload images with delay to prevent aggressive loading
+    const preloadImages = async () => {
+      for (let i = 0; i < projects.length; i++) {
+        await new Promise(resolve => setTimeout(resolve, 200)) // 200ms delay between each image
+        
+        const img = new Image()
+        img.onload = () => {
+          setImagesLoaded(prev => new Set(prev).add(projects[i].id))
+        }
+        img.src = projects[i].image
+      }
+    }
+
+    preloadImages()
+  }, [isInView])
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
@@ -105,6 +159,43 @@ const ProjectCards: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Optimized image component
+  const OptimizedImage: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
+    const [imageSrc, setImageRef] = useLazyImage(project.image)
+    const [isLoaded, setIsLoaded] = useState(false)
+
+    return (
+      <div className="relative aspect-[4/3] rounded-lg md:rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+        {/* Placeholder */}
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-700 dark:to-neutral-800 animate-pulse" />
+        )}
+        
+        {/* Actual Image */}
+        <img
+          ref={setImageRef}
+          src={imageSrc}
+          alt={project.title}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={() => setIsLoaded(true)}
+          loading="lazy"
+          decoding="async"
+        />
+        
+        {/* Colored overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-br from-neutral-900/60 to-neutral-800/40 mix-blend-multiply`} />
+        
+        {/* Service number */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-6">
+          <span className="text-white font-black text-xl md:text-2xl tracking-tight">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+        </div>
+      </div>
+    )
+  }
   return (
     <section className="bg-white dark:bg-black transition-colors duration-500">
       {/* Sticky Cards Section */}
@@ -177,20 +268,7 @@ const ProjectCards: React.FC = () => {
                       >
                         {/* Image Container - 60% height */}
                         <div className="relative h-[60%] overflow-hidden">
-                          <motion.img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                            style={{ 
-                              filter: 'grayscale(100%) contrast(1.2) brightness(0.9)',
-                              transition: 'filter 0.5s ease'
-                            }}
-                            whileHover={{ 
-                              filter: 'grayscale(0%) contrast(1) brightness(1)',
-                              scale: 1.05,
-                              transition: { duration: 0.5, ease: "easeOut" }
-                            }}
-                          />
+                          <OptimizedImage project={project} index={index} />
                           
                           {/* Overlay Gradient */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
