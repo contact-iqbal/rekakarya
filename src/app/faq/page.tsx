@@ -61,7 +61,7 @@ export default function FAQPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-8 md:px-16 lg:px-24">
+      <section className="pt-40 pb-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

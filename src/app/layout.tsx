@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import FloatingThemeToggle from '@/components/FloatingThemeToggle'
 import CookieNotification from '@/components/CookieNotification'
+import RunningTextBanner from '@/components/RunningTextBanner'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
+          <RunningTextBanner />
           {children}
           <FloatingThemeToggle />
           <CookieNotification />

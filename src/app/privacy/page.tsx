@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-8 md:px-16 lg:px-24">
+      <section className="pt-40 pb-20 px-8 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

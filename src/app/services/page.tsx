@@ -197,7 +197,7 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 bg-neutral-100 dark:bg-neutral-800">
+      <section className="py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 bg-neutral-100 dark:bg-neutral-800 mt-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -777,7 +777,7 @@ export default function ProductPage() {
       
       {/* Hero Section - Sticky Background */}
       <section 
-        className="fixed inset-0 z-0 pt-20 pb-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center bg-white dark:bg-neutral-900 transition-opacity duration-500 ease-out"
+        className="fixed inset-0 z-0 pt-28 pb-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center bg-white dark:bg-neutral-900 transition-opacity duration-500 ease-out"
         style={{ opacity: heroOpacity }}
       >
         <div className="max-w-7xl mx-auto w-full">

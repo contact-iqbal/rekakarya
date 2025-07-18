@@ -28,7 +28,7 @@ export default function ContactPage() {
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-32 w-full min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-40 w-full min-h-screen flex items-center">
           
           {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full items-center">

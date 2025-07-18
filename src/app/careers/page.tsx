@@ -22,7 +22,7 @@ export default function CareersPage() {
       <Navigation />
       
       {/* Full Screen Hero Section - 100vh */}
-      <section className="h-screen flex flex-col bg-neutral-900">
+      <section className="h-screen flex flex-col bg-neutral-900 pt-8">
         {/* Main Hero Content - Takes most of the screen */}
         <div className="flex-1 flex items-center px-8 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto w-full">

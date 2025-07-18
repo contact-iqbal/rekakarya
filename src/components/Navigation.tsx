@@ -179,7 +179,7 @@ const Navigation: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-4 left-4 right-4 z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl border border-neutral-200/50 dark:border-neutral-700/50 rounded-2xl shadow-lg transition-all duration-500 ease-in-out"
+            className="fixed top-12 left-4 right-4 z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl border border-neutral-200/50 dark:border-neutral-700/50 rounded-2xl shadow-lg transition-all duration-500 ease-in-out"
           >
             <div className="max-w-7xl mx-auto px-6 md:px-8">
               <div className="flex items-center justify-between h-16 md:h-20">

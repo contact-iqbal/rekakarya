@@ -212,7 +212,7 @@ export default function PersonalInfoPage() {
       </div>
 
       {/* Main Content */}
-      <div className="pt-32 pb-20 px-6 md:px-8">
+      <div className="pt-40 pb-20 px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           
           {/* Header */}

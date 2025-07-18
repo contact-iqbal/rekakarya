@@ -239,7 +239,7 @@ export default function ChooseDomainPage() {
       </div>
 
       {/* Main Content */}
-      <div className="pt-32 pb-20 px-6 md:px-8">
+      <div className="pt-40 pb-20 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           
           {/* Header */}
