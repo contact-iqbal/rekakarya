@@ -380,7 +380,7 @@ export default function ChooseDomainPage() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 min-h-[600px]"
+                className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 min-h-[600px] shadow-sm"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-6">

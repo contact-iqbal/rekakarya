@@ -146,7 +146,7 @@ export default function FloatingThemeToggle() {
           variants={bubbleVariants}
           animate={isHovered ? 'hover' : 'idle'}
           whileTap="click"
-          className={`relative w-16 h-16 rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-neutral-800/90 dark:to-neutral-900/70 backdrop-blur-xl border-4 border-black dark:border-white shadow-2xl flex items-center justify-center group overflow-hidden transition-opacity duration-300 ${
+          className={`relative w-16 h-16 rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-neutral-800/90 dark:to-neutral-900/70 backdrop-blur-xl border-2 border-neutral-300 dark:border-neutral-600 shadow-2xl flex items-center justify-center group overflow-hidden transition-opacity duration-300 ${
             isScrolling ? 'opacity-50 cursor-not-allowed' : ''
           }`}
           aria-label={showScrollTop ? "Scroll to top" : "Toggle theme"}

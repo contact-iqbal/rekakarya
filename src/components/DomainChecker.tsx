@@ -297,7 +297,7 @@ const DomainChecker: React.FC = () => {
                                sessionStorage.setItem('domainSearchTerm', `${result.domain}${result.extension}`);
                                window.location.href = '/order/choose-domain';
                              }}
-                              className="px-4 py-2 bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white text-sm font-semibold rounded-lg border-3 border-black dark:border-white transition-colors duration-200 flex items-center gap-2 flex-shrink-0"
+                              className="px-4 py-2 bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white text-sm font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2 flex-shrink-0"
                             >
                               <span>Register</span>
                               <ExternalLink className="w-4 h-4" />

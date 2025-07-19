@@ -279,7 +279,7 @@ export default function PersonalInfoPage() {
                     type="text"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
+                    className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
                       errors.firstName 
                         ? 'border-red-300 dark:border-red-600 bg-red-50 dark:bg-red-900/20' 
                         : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700'
@@ -299,7 +299,7 @@ export default function PersonalInfoPage() {
                     type="text"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
+                    className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
                       errors.lastName 
                         ? 'border-red-300 dark:border-red-600 bg-red-50 dark:bg-red-900/20' 
                         : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700'
@@ -319,7 +319,7 @@ export default function PersonalInfoPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
+                    className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
                       errors.email 
                         ? 'border-red-300 dark:border-red-600 bg-red-50 dark:bg-red-900/20' 
                         : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700'
@@ -339,7 +339,7 @@ export default function PersonalInfoPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
+                    className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-neutral-500 focus:border-transparent outline-none transition-all ${
                       errors.phone 
                         ? 'border-red-300 dark:border-red-600 bg-red-50 dark:bg-red-900/20' 
                         : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700'

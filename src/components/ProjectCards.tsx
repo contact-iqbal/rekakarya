@@ -257,7 +257,7 @@ const ProjectCards: React.FC = () => {
                       className="absolute inset-0 group cursor-pointer"
                     >
                       <motion.div 
-                        className="relative w-full h-full rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-2xl bg-white dark:bg-neutral-900 border-4 border-black dark:border-white"
+                        className="relative w-full h-full rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700"
                         whileHover={{ 
                           scale: 1.02,
                           rotateY: 2,
@@ -280,7 +280,7 @@ const ProjectCards: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
                           >
-                            <span className="text-xs sm:text-sm font-bold text-white px-3 sm:px-4 py-1.5 sm:py-2 bg-black/60 backdrop-blur-sm rounded-full border-3 border-white">
+                            <span className="text-xs sm:text-sm font-bold text-white px-3 sm:px-4 py-1.5 sm:py-2 bg-black/60 backdrop-blur-sm rounded-full border border-white/50">
                               {project.category}
                             </span>
                           </motion.div>
@@ -296,14 +296,14 @@ const ProjectCards: React.FC = () => {
                             <motion.button
                               whileHover={{ scale: 1.1, rotate: 5 }}
                               whileTap={{ scale: 0.9 }}
-                              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors border-3 border-white"
+                              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors border border-white/50"
                             >
                               <ExternalLink size={16} className="sm:w-5 sm:h-5" />
                             </motion.button>
                             <motion.button
                               whileHover={{ scale: 1.1, rotate: -5 }}
                               whileTap={{ scale: 0.9 }}
-                              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors border-3 border-white"
+                              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors border border-white/50"
                             >
                               <Github size={16} className="sm:w-5 sm:h-5" />
                             </motion.button>
@@ -355,14 +355,14 @@ const ProjectCards: React.FC = () => {
                               <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-4 sm:px-6 py-2 sm:py-3 bg-black dark:bg-white text-white dark:text-black text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl border-3 border-black dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors"
+                                className="px-4 sm:px-6 py-2 sm:py-3 bg-black dark:bg-white text-white dark:text-black text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors"
                               >
                                 Choose Template
                               </motion.button>
                               <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-4 sm:px-6 py-2 sm:py-3 border-4 border-black dark:border-white text-black dark:text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                                className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-black dark:border-white text-black dark:text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
                               >
                                 Visit
                               </motion.button>

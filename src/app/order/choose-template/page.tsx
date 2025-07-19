@@ -383,7 +383,7 @@ export default function ChooseTemplatePage() {
                       onClick={() => handleTemplateSelect(template)}
                       className={`group cursor-pointer bg-white dark:bg-neutral-800 rounded-2xl border-2 transition-all duration-300 overflow-hidden hover:shadow-xl ${
                         selectedTemplate?.id === template.id
-                          ? 'border-blue-500 dark:border-blue-400 shadow-lg'
+                          ? 'border-blue-500 dark:border-blue-400 shadow-lg ring-2 ring-blue-200 dark:ring-blue-800'
                           : 'border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600'
                       }`}
                     >

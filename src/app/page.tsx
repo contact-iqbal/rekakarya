@@ -272,7 +272,7 @@ export default function Home() {
         <div className="px-8 md:px-16 lg:px-24 pb-16 pt-8">
           <motion.div 
             ref={statsRef}
-            className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border-4 border-black dark:border-white"
+            className="bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-neutral-200 dark:border-neutral-700"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               {/* Stat 1 */}
