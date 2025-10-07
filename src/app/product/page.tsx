@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, Check, Star, Zap, Shield, Rocket, Users, Globe, Code, Palette, Smartphone, Database, ExternalLink, Heart, Eye, Bookmark, X, Mail, Phone, Globe as GlobeIcon } from 'lucide-react'
@@ -773,7 +772,6 @@ export default function ProductPage() {
   }
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-300 relative">
-      <Navigation />
       
       {/* Hero Section - Sticky Background */}
       <section 
